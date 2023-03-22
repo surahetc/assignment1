@@ -1,4 +1,6 @@
-const hasError = true;
+// ----------------------------TASK 1 PROMISE---------------------------------------
+
+const hasError = false;
 
 const displayMessage = new Promise((resolve,reject)=>{
     if(hasError)
@@ -13,3 +15,21 @@ displayMessage.then(message => {
 .catch(err=>{
     console.log(err)
 })
+
+
+
+// ----------------------------TASK 2 FILESYSTEM---------------------------------------
+
+
+const fs = require('fs').promises;
+
+const createFile = async function(){
+    try{
+        await fs.writeFile('newFile.txt','New content');
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+createFile();
