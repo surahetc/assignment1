@@ -6,7 +6,7 @@ const displayMessage = new Promise((resolve,reject)=>{
     if(hasError)
         reject("Some Error has occured");
     else
-        resolve("This is the new message");
+        resolve("PROMISE MESSAGE : This is the new message");
 })
 
 displayMessage.then(message => {
@@ -26,6 +26,7 @@ const fs = require('fs').promises;
 const createFile = async function(){
     try{
         await fs.writeFile('newFile.txt','New content');
+        console.log("newFile.txt created")
     }
     catch(err){
         console.log(err);
